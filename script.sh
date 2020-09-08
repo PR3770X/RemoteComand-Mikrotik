@@ -18,7 +18,9 @@ for hosts in $(cat devices.txt); do
                         echo "O dispositivo $hosts esta OFFLINE em $(date)!"
                 else
                         export host=$hosts
-                        sshpass -p $pass ssh -t -o StrictHostKeyChecking=no $user@$host -p $port '/user print; /user add name=teste password=teste group=full;'
+                        sshpass -p $pass ssh -t -o StrictHostKeyChecking=no $user@$host -p $port '/user print; /user add name=teste password=teste group=full;
+                        /
+                        quit'
                         echo "O comando no dispositivo $host foi executado com sucesso em $(date)!"
                         echo "Checando próximo host"
         fi
